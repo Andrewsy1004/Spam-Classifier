@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Classifier - AI Detection</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ Email Spam Classifier</h1>
+            <p class="subtitle">AI-Powered Email Protection using Machine Learning</p>
+        </header>
+
+        <div class="nav-pills">
+            <button class="nav-pill active" onclick="showSection('home')">Home</button>
+            <button class="nav-pill" onclick="showSection('demo')">Try Demo</button>
+            <button class="nav-pill" onclick="showSection('api')">API Docs</button>
+        </div>
+
+        <!-- Home Section -->
+        <div id="home" class="section active">
+            <div class="card">
+                <h2>Welcome to Our Spam Detection System</h2>
+                <p class="section-description">
+                    Leveraging advanced Natural Language Processing and Machine Learning to protect your inbox from unwanted spam emails.
+                </p>
+
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-number">97%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">5,572</div>
+                        <div class="stat-label">Training Samples</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Spam Detection</div>
+                    </div>
+                </div>
+
+                <h3>🚀 Key Features</h3>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <div class="feature-title">ML Powered</div>
+                        <p>Advanced Logistic Regression model trained on thousands of real emails</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-title">Real-Time Analysis</div>
+                        <p>Instant spam detection with confidence scores in milliseconds</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-title">High Precision</div>
+                        <p>96% precision in spam detection minimizes false positives</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <div class="feature-title">Secure API</div>
+                        <p>RESTful API with FastAPI for seamless integration</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <div class="feature-title">Continuous Learning</div>
+                        <p>Model can be retrained with new data for improved accuracy</p>
+                    </div>
+                </div>
+
+                <h3>🔧 Technology Stack</h3>
+
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">FastAPI</span>
+                    <span class="tech-badge">Scikit-learn</span>
+                    <span class="tech-badge">TF-IDF</span>
+                    <span class="tech-badge">Logistic Regression</span>
+                    <span class="tech-badge">Pandas</span>
+                    <span class="tech-badge">NumPy</span>
+                    <span class="tech-badge">Joblib</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo Section -->
+        <div id="demo" class="section">
+            <div class="card">
+                <h2>🧪 Test the Classifier</h2>
+                <p class="section-description">
+                    Paste any email text below to see if it's spam or legitimate
+                </p>
+
+                <form id="classifierForm">
+                    <textarea 
+                        id="emailText" 
+                        placeholder="Example: URGENT! You've won $1,000,000! Click here to claim your prize NOW!..."
+                        required
+                    ></textarea>
+                    <button type="submit" class="btn">Analyze Email</button>
+                </form>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Analyzing...</p>
+                </div>
+
+                <div class="result" id="result">
+                    <div class="result-content">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <div class="result-text" id="resultText"></div>
+                        <div class="confidence" id="confidence"></div>
+                        <div class="timestamp" id="timestamp"></div>
+                    </div>
+                </div>
+
+                <div class="examples">
+                    <h4>💡 Try these examples:</h4>
+                    <div class="example-buttons">
+                        <button class="example-btn" onclick="fillExample('spam')">Spam Example</button>
+                        <button class="example-btn" onclick="fillExample('ham')">Legitimate Example</button>
+                        <button class="example-btn" onclick="clearText()">Clear Text</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- API Section -->
+        <div id="api" class="section">
+            <div class="card">
+                <h2>🔌 API Documentation</h2>
+                <p class="section-description">
+                    Integrate our spam detection into your applications using our REST API
+                </p>
+
+                <div class="api-endpoints">
+                    <div class="endpoint">
+                        <div class="endpoint-method get">GET</div>
+                        <div class="endpoint-path">/health</div>
+                        <div class="endpoint-description">Check API health status</div>
+                    </div>
+
+                    <div class="endpoint">
+                        <div class="endpoint-method post">POST</div>
+                        <div class="endpoint-path">/predict</div>
+                        <div class="endpoint-description">Classify email text as spam or ham</div>
+                    </div>
+
+                    <div class="endpoint">
+                        <div class="endpoint-method get">GET</div>
+                        <div class="endpoint-path">/api/model-info</div>
+                        <div class="endpoint-description">Get model information</div>
+                    </div>
+                </div>
+
+                <div class="api-link">
+                    <a href="/api/docs" target="_blank" class="btn btn-secondary">
+                        View Full API Documentation
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-text">
+                Built with ❤️ using Machine Learning & FastAPI
+            </p>
+            <p class="footer-subtext">
+                © 2025 Email Spam Classifier
+            </p>
+        </footer>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
