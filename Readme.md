@@ -14,7 +14,7 @@ A modern, machine learning-based web application that classifies emails as spam 
 
 ---
 
-# 📦 Machine Learning Model
+## 📦 Machine Learning Model
 The model used in this application is a Logistic Regression classifier trained on thousands of email samples to detect spam messages. It uses TF-IDF Vectorization with bigram support to transform text into numerical features that capture the importance of words and phrases in determining whether an email is spam or legitimate.
 🔗 [In case that you want to see the model](https://colab.research.google.com/drive/100maV0YsEVriNnz2XRw-j3Zhz9djorEO?usp=sharing)
 
