@@ -143,14 +143,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     result.classList.add('error');
                     document.getElementById('resultIcon').textContent = '❌';
                     document.getElementById('resultText').textContent = 'ANALYSIS ERROR';
-                    document.getElementById('confidence').textContent = 'Unable to analyze the text';
+                    // document.getElementById('confidence').textContent = 'Unable to analyze the text';
                 } else {
                     result.classList.add(data.is_spam ? 'spam' : 'ham');
                     document.getElementById('resultIcon').textContent = data.is_spam ? '🚫' : '✅';
                     document.getElementById('resultText').textContent = 
                         data.is_spam ? 'SPAM DETECTED!' : 'LEGITIMATE EMAIL';
-                    document.getElementById('confidence').textContent = 
-                        `Confidence: ${(data.confidence * 100).toFixed(2)}%`;
+                    // document.getElementById('confidence').textContent = 
+                    //     `Confidence: ${(data.confidence * 100).toFixed(2)}%`;
                 }
                 
                 document.getElementById('timestamp').textContent = 
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 document.getElementById('resultIcon').textContent = '❌';
                 document.getElementById('resultText').textContent = 'NETWORK ERROR';
-                document.getElementById('confidence').textContent = 'Unable to connect to the server';
+                // document.getElementById('confidence').textContent = 'Unable to connect to the server';
                 document.getElementById('timestamp').textContent = 
                     `Error at: ${formatTimestamp(new Date().toISOString())}`;
                 
